@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokémon Mezastar SG ID Dashboard</title>
+    <title>Pokémon Mezastar MY ID Dashboard</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -133,11 +133,11 @@
 <body>
 
 <div class="container">
-    <h1>Pokémon Mezastar SG Live Dashboard</h1>
+    <h1>Pokémon Mezastar MY Live Dashboard</h1>
     
     <div id="statsCounter" class="stats">🔄 Reading log database...</div>
     
-    <button id="runScraperBtn" onclick="triggerScraper()">🚀 Force Run SG Mezastar Scraper Now</button>
+    <button id="runScraperBtn" onclick="triggerScraper()">🚀 Force Run MY Mezastar Scraper Now</button>
     
     <input type="text" id="search" placeholder="🔍 Search by Ticket ID..." onkeyup="applyFilters()">
 
@@ -170,8 +170,8 @@
             if (!response.ok) throw new Error('Log file not found yet');
             
             const text = await response.text();
-            // Regex handles the SG prefix variant
-            const regex = /\[(.*?)\]\s+.*Scraped ID:\s+(SG_\d+)/g;
+            // Regex handles the MY prefix variant
+            const regex = /\[(.*?)\]\s+.*Scraped ID:\s+(MY_\d+)/g;
             let match;
             
             const uniqueEntries = new Map();
